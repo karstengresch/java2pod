@@ -104,6 +104,44 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>com.google.cloud.tools</groupId>
+        <artifactId>jib-maven-plugin</artifactId>
+        <version>3.3.1</version>
+        <dependencies>
+          <dependency>
+            <groupId>com.google.cloud.tools</groupId>
+            <artifactId>jib-quarkus-extension-maven</artifactId>
+            <version>0.1.1</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <to>
+            <image>java2pod-extended-jib-base</image>
+          </to>
+          <container>
+            <!-- special case for Quarkus, see
+            https://github.com/GoogleContainerTools/jib-extensions/tree/master/first-party/jib-quarkus-extension-maven -->
+            <mainClass>bogus</mainClass>
+            <jvmFlags>
+              <flag>-Dquarkus.http.host=0.0.0.0</flag>
+              <flag>-Djava.util.logging.manager=org.jboss.logmanager.LogManager</flag>
+            </jvmFlags>
+            <ports>
+              <port>8080</port>
+            </ports>
+            <user>185</user>
+          </container>
+          <pluginExtensions>
+            <pluginExtension>
+              <implementation>com.google.cloud.tools.jib.maven.extension.quarkus.JibQuarkusExtension</implementation>
+              <properties>
+                <packageType>fast-jar</packageType>
+              </properties>
+            </pluginExtension>
+          </pluginExtensions>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   <profiles>
