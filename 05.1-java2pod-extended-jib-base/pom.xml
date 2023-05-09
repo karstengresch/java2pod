@@ -130,7 +130,7 @@
             <ports>
               <port>8080</port>
             </ports>
-            <user>185</user>
+            <user>1001</user>
           </container>
           <pluginExtensions>
             <pluginExtension>
