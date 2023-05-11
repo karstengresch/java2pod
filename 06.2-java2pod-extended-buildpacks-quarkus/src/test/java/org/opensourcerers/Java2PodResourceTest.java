@@ -1,10 +1,11 @@
 package org.opensourcerers;
 
-import io.quarkus.test.junit.QuarkusTest;
-import org.junit.jupiter.api.Test;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
+
+import org.junit.jupiter.api.Test;
+
+import io.quarkus.test.junit.QuarkusTest;
 
 @QuarkusTest
 public class Java2PodResourceTest {
@@ -15,7 +16,7 @@ public class Java2PodResourceTest {
           .when().get("/api/java2pod")
           .then()
              .statusCode(200)
-             .body(is("Hello from RESTEasy Reactive"));
+             .body(is("Your environment ID is: local"));
     }
 
 }

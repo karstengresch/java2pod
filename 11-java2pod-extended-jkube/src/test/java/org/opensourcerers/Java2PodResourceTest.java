@@ -15,7 +15,7 @@ public class Java2PodResourceTest {
           .when().get("/api/java2pod")
           .then()
              .statusCode(200)
-             .body(is("Hello from RESTEasy Reactive"));
+             .body(is("Your environment ID is: local"));
     }
 
 }

@@ -11,6 +11,6 @@ public class Java2PodResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return "Hello from RESTEasy Reactive";
+        return "Your environment ID is: local";
     }
 }
