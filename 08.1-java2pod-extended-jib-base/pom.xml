@@ -117,7 +117,7 @@
         </dependencies>
         <configuration>
           <to>
-            <image>java2pod-extended-jib-base</image>
+            <image>docker.io/gresch/java2pod-extended-jib-base</image>
           </to>
           <container>
             <!-- special case for Quarkus, see
