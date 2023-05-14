@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/openjdk-17:1.14
+FROM registry.access.redhat.com/ubi8/openjdk-17-runtime:latest
 COPY target/*-runner.jar /deployments/quarkus-run.jar
 EXPOSE 8080
 USER 185
