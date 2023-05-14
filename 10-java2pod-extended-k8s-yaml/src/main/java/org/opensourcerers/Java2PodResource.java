@@ -9,7 +9,6 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 @Path("/api/java2pod")
-@ApplicationScoped
 public class Java2PodResource {
 
     @ConfigProperty(name = "environment.id", defaultValue="local")
