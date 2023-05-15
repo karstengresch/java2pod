@@ -1,7 +1,10 @@
 {
-  "folders": [{ "path": "01-java2pod-init" }, { "path": "02-java2pod-extended" }, { "path": "03-minimal-dockerfile" }, { "path": "04-java2pod-extended-dockerfile" }, { "path": "05.1-java2pod-extended-jib-base" }, { "path": "05.2-java2pod-extended-jib-quarkus-extension" }, { "path": "06-java2pod-extended-s2i-local" }, { "path": "07-java2pod-extended-buildpacks" }],
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
   "settings": {
-    "java.configuration.updateBuildConfiguration": "automatic",
-    "java.project.sourcePaths": []
+    "java.compile.nullAnalysis.mode": "disabled"
   }
 }
