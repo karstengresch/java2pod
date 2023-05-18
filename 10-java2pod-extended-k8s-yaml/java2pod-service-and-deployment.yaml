@@ -31,6 +31,6 @@ spec:
     spec:
       containers:
         - name: java2pod
-          image: quay.io/gresch/java2pod-extended:1.0.0-SNAPSHOT
+          image: quay.io/gresch/java2pod-monday:1.0.0-SNAPSHOT
           ports:
             - containerPort: 8080
