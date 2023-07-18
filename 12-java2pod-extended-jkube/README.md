@@ -29,9 +29,6 @@ mvn k8s:resource k8s:apply -Djkube.generator.name="quay.io/gresch/%a:%l" -Djkube
 `jkube.generator.name=”quay.io/<user-/orgname>/%a:%l”`
 <br />Specifies the image URL (incl. tag) at the external repository.
 
-`me=”quay.io/<user-/orgname>/%a:%l”`
-<br />Specifies the image URL (incl. tag) at the external repository.
-
 `jkube.namespace=<K8s namespace>`
 <br />The namespace on the K8s cluster
 
