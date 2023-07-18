@@ -3,18 +3,21 @@ Reference project for an article at Open Sourcerers: https://www.opensourcerers.
 ## Commands, as mentioned there
 
 ### Build Image
+
 ```bash
 # Replace “gresch” with >>>your<<<>>> registry username!
 mvn k8s:build -Djkube.build.strategy=jib -Djkube.generator.name="quay.io/gresch/%a:%l"
 ```
 
 ### Push Image
+
 ```bash
 # Replace “gresch” with >>>your<<<>>> registry username!
 mvn k8s:push -Djkube.generator.name="quay.io/gresch/%a:%l"
 ```
 
 ###
+
 ```bash
 # Replace “gresch” with >>>your<<<>>> registry username!
 # Adjust ‘jkube.domain’!
@@ -38,18 +41,19 @@ mvn k8s:resource k8s:apply -Djkube.generator.name="quay.io/gresch/%a:%l" -Djkube
 `jkube.domain=mydomain.mytld`
 <br />The external URL under which your application shall be available
 
-## Placeholder	Descriptions
+## Placeholder Descriptions
+
 %g
 <br />
-The last part of the Maven group name, sanitized so that it can be used as username on GitHub. Only the part after the last dot is used. E.g. for a group id org.eclipse.jkube this placeholder would insert jkube
+Last part of the Maven group name, sanitized for to be used as username on GitHub. Only part _after last_ dot used. E.g. for a group id org.eclipse.jkube this placeholder would insert jkube
 
 %a
 <br />
-A sanitized version of the artefact id so that it can be used as part of an Docker image name. I.e. it is converted to all lower case (as required by Docker)
+Sanitized version of the artifact id so that it can be used as part of a container image name. I.e. converted to all lower case (required by Docker).
 
 %v
 <br />
-The project version. Synonym to ${project.version}
+Project version. Synonym to ${project.version}
 
 %l
 <br />
@@ -57,7 +61,10 @@ If the project version ends with -SNAPSHOT then this placeholder is latest, othe
 
 %t
 <br />
-If the project version ends with -SNAPSHOT this placeholder resolves to snapshot-<timestamp> where timestamp has the date format yyMMdd-HHmmss-SSSS (eg snapshot-). This feature is especially useful during development in oder to avoid conflicts when images are to be updated which are still in use. You need to take care yourself of cleaning up old images afterwards, though.
-
+If the project version ends with -SNAPSHOT this placeholder resolves to snapshot-<timestamp> where timestamp has the date format yyMMdd-HHmmss-SSSS (eg snapshot-). This feature is especially useful during development in oder to avoid conflicts when images are to be updated which are still in use. **Take care yourself of cleaning up old images afterwards!**
 
 Full documentation here: https://eclipse.dev/jkube/docs (there select flavor: Maven/Gradle, K8s/OpenShift).
+
+## Working w/ private OpenShift registry?
+
+See handling here: https://www.opensourcerers.org/2023/06/05/java-to-pod/#openshift-private-registry
