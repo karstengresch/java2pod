@@ -1,3 +1,1 @@
-To be done:
-- Generate base spring boot
-- jib it
+Reference project for an article at Open Sourcerers: https://www.opensourcerers.org/2023/06/05/java-to-pod/
