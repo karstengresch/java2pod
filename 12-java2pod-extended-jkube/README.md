@@ -65,3 +65,11 @@ Full documentation here: https://eclipse.dev/jkube/docs (there select flavor: Ma
 ## Working w/ private OpenShift registry?
 
 See handling here: https://www.opensourcerers.org/2023/06/05/java-to-pod/#openshift-private-registry
+
+Make sure to login w/
+
+```
+(docker|podman) login  -u `oc whoami` -p `oc whoami --show-token` <oc-registry-route, e.g. default-route-openshift-image-registry.apps.ocp4.mydomain.mytld
+```
+
+first or take care of authentication (see https://eclipse.dev/jkube/docs/openshift-maven-plugin/#authentication)!
